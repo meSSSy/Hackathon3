@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-messsy-hackathon3-ni0g7wscfwm.ws.codeinstitute-ide.net', 'hackathonthree-6c8c41556e26.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-messsy-hackathon3-ni0g7wscfwm.ws.codeinstitute-ide.net', 'hackathonthree-6c8c41556e26.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net',
 'https://*.herokuapp.com']
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
-    'Blog',
+    'blog',
 ]
 
 MIDDLEWARE = [
