@@ -90,8 +90,7 @@ WSGI_APPLICATION = 'Hackathon3.wsgi.application'
 #}
 
 DATABASES = {
-'default':
-dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
