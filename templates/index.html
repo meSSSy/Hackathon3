@@ -1,9 +1,43 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% load static %}
-
 
 {% block content %}
 
+<div class="main-content">
+    
+    {% if featured_post %}
+    <div class="featured-post">
+        <div class="featured-image">
+            {% if featured_post.featured_image %}
+            <img src="{{ featured_post.featured_image.url }}" alt="{{ featured_post.title }}">
+            {% endif %}
+        </div>
+        <div class="featured-content">
+            <h1 class="featured-title">{{ featured_post.title }}</h1>
+            <p class="featured-desc">{{ featured_post.description }}</p>
+            <a href="{% url 'blog:post_detail' featured_post.slug %}" class="btn">See Post</a>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row">
+            {% for post in regular_posts %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    {% if post.featured_image %}
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top"
+                        style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p>{{ post.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
