@@ -182,6 +182,21 @@ footer a:hover {
   border: 2px solid black;
 }
 
+.card-title {
+  font-family: "Space Mono", sans-serif;
+  color: white;
+}
+
+.card-text {
+  font-family: "Roboto Flex", sans-serif;
+  color: white;
+}
+
+.author {
+  font-family: "Roboto Flex", sans-serif;
+  color:#00ffee;
+}
+
 .blog-p {
   font-family: "Roboto Flex", sans-serif;
 }

@@ -21,22 +21,21 @@
     <div class="container">
         <div class="row">
             {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6">
+                    <div class="card mb-6">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img src="{% static 'images/placeholder.jpg' %}" alt="placeholder image" class="card-img-top">
+                                <img src="{% static 'images/placeholder.jpg' %}" alt="placeholder image" class="card-img-top" style="height: 200px; object-fit: cover;">
                                 {% else %}
-                                <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top">
+                                <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">Author: {{ post.author }} &nbsp; | &nbsp; Category: {{ post.category }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2>Category: {{ post.category }}</h2>
-                                <h2 class="card-title">{{ post.title }}</h2>
+                                <h2 class="card-title">{{ post.title }}</h2> 
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
@@ -46,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
