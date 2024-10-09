@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-messsy-hackathon3-ni0g7wscfwm.ws.codeinstitute-ide.net', 'https://hackathonthree-6c8c41556e26.herokuapp.com/']
 
@@ -44,7 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary_storage',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'django_summernote',    
     'cloudinary',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -56,9 +64,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'Hackathon3.urls'
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 TEMPLATES = [
     {
