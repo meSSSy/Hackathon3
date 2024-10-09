@@ -181,3 +181,10 @@ footer a:hover {
 .card {
   border: 2px solid black;
 }
+
+
+@media screen and (max-width: 425px) {
+  .secondary-header {
+    gap: 0.5rem;
+  }
+}
