@@ -156,3 +156,18 @@ def comment_delete(request, slug, comment_id):
 
 def index(request):
     return render(request, 'index.html')
+
+def backend_view(request):
+    return render(request, 'blog/backend.html')
+
+def ai_view(request):
+    return render(request, 'blog/ai.html')
+
+def cybersecurity_view(request):
+    return render(request, 'blog/cybersecurity.html')
+
+def design_view(request):
+    return render(request, 'blog/design.html')
+
+def frontend_view(request):
+    return render(request, 'blog/frontend.html')
