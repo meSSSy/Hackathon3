@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Backend Development</h1>
-    <p>blah blah blah</p>
+<h1>Backend Development</h1>
+<p>blah blah blah</p>
+
+{% if posts %}
+    {% for post in posts %}
+        <article>
+            <h3>{{ post.title }}</h3>
+            {% if post.featured_image %}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+            {% endif %}
+            <p>{{ post.excerpt|default:post.content|truncatewords:30 }}</p>
+            <p>Author: {{ post.author }}</p>
+            <p>Created on: {{ post.created_on|date:"F d, Y" }}</p>
+            <a href="{% url 'post_detail' post.slug %}">Read more</a>
+        </article>
+    {% endfor %}
+{% else %}
+    <p>No backend posts available.</p>
+{% endif %}
+
 {% endblock %}
