@@ -103,8 +103,6 @@ footer a:hover {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-
-
 /* MAIN CONTENT STYLE */
 .main-content {
   max-width: 1200px;
@@ -113,7 +111,6 @@ footer a:hover {
   background-color: black;
   color: white;
 }
-
 
 /* FEATURED POSTS */
 .featured-post {
@@ -153,14 +150,13 @@ footer a:hover {
   font-family: "Roboto Flex", sans-serif;
 }
 
-.featured-image img:hover{
-  box-shadow: 0 0 25px var(--main-color),
-              0 0 50px var(--main-color),
-              0 0 100px var(--main-color);
+.featured-image img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
 }
 
 .btn {
-  color:black;
+  color: black;
   background-color: #00ffee;
 }
 
@@ -194,7 +190,7 @@ footer a:hover {
 
 .author {
   font-family: "Roboto Flex", sans-serif;
-  color:#00ffee;
+  color: #00ffee;
 }
 
 .blog-p {
@@ -205,6 +201,98 @@ footer a:hover {
   font-family: "Space Mono", sans-serif;
 }
 
+/* Blog Detail Page */
+
+.main-wrapper {
+  padding: 0 20px;
+  position: relative;
+}
+
+.blog-post-wrapper {
+  position: relative;
+  z-index: 4;
+  padding: 50px 0;
+}
+
+.blog-post-2 {
+  background-color: black;
+}
+
+.blog-post {
+  background-color: white;
+  width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-title {
+  font-family: "Space Mono", sans-serif;
+  color: white;
+  font-size: 3rem;
+  display: block;
+  align-items: center;
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.post-subtitle {
+  font-family: "Roboto Flex", sans-serif;
+  color: #00ffee;
+  margin-top: 5px;
+  display: block;
+  float: left;
+  margin-left: 2%;
+}
+
+.post-category {
+  font-family: "Roboto Flex", sans-serif;
+  color: #00ffee;
+  margin-top: 5px;
+  display: block;
+  float: right;
+  margin-right: 4%;
+}
+
+hr {
+  color: white;
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.post-description {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  color: #d3d3d3;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.blog-post-tools {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 2rem;
+  color: white;
+  margin-top: 4%;
+  opacity: 0.5;
+}
+
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin: 0 8%;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 425px) {
   .secondary-header {
