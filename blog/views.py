@@ -80,7 +80,7 @@ def post_detail(request, slug):
 
     return render(
         request,
-        "blog/templates/blogpost.html",
+        "templates/blog/blogpost.html.",
         {
           "post": post,
           "comments": comments,
