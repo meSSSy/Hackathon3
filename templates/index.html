@@ -20,20 +20,37 @@
 
     <div class="container">
         <div class="row">
-            {% for post in regular_posts %}
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    {% if post.featured_image %}
-                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top"
-                        style="height: 200px; object-fit: cover;">
-                    {% endif %}
-                    <div class="card-body">
-                        <h2 class="card-title">{{ post.title }}</h2>
-                        <p>{{ post.description }}</p>
+            {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img src="{% static 'images/rose.png' %}" alt="placeholder image" class="card-img-top">
+                                {% else %}
+                                <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h2>Category: {{ post.category }}</h2>
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            </p>
+                        </div>
                     </div>
                 </div>
+                {% if forloop.counter|divisibleby:3 %}
             </div>
-            {% endfor %}
+            <div class="row">
+                {% endif %}
+                {% endfor %}
         </div>
     </div>
 </div>
