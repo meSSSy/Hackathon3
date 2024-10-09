@@ -182,6 +182,14 @@ footer a:hover {
   border: 2px solid black;
 }
 
+.blog-p {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.blog-h {
+  font-family: "Space Mono", sans-serif;
+}
+
 
 @media screen and (max-width: 425px) {
   .secondary-header {
