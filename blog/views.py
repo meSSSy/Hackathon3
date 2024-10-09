@@ -155,4 +155,4 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def index(request):
-    return render(request, 'templates/index.html')
+    return render(request, 'index.html')

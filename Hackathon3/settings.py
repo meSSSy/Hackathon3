@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-messsy-hackathon3-ni0g7wscfwm.ws.codeinstitute-ide.net', '8000-messsy-hackathon3-ho0czajorbf.ws.codeinstitute-ide.net', 'https://hackathonthree-6c8c41556e26.herokuapp.com/']
 
