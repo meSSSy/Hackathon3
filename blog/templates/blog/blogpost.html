@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 =======
 {% load static %}
@@ -8,38 +7,37 @@
 
 {% load crispy_forms_tags %}
 
-<div class="main-content">
-    <div class="masthead">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-md-6 masthead-text">
-                    <!-- Post title goes in these h1 tags -->
-                    <h1 class="post-title">{{ post.title }}</h1>
-                    <h2 class="post-category">{{ post.category }}</h2>
-                    <!-- Post author goes before the | the post's created date goes after -->
-                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+<div class="main-wrapper">
+    <div class="blog-post-wrapper">
+        <div class="blog-post">
+            <div class="blog-post-2">
+                <div class="blog-post-image">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="{% static 'images/placeholder.jpg' %}" alt="placeholder image" class="card-img-top">
+                    {% else %}
+                    <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top">
+                    {% endif %}
                 </div>
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                    <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
+                <div class="blog-post-description">
+                    <aside class="post-subtitle"><p>{{ post.author }} &nbsp; | &nbsp; {{ post.created_on }}</p></aside>
+                    <aside class="post-category"><p>{{ post.category }}</p></aside>
+                    <br>
+                    <div><h1 class="post-title">{{ post.title }}</h1></div> 
+                    <hr />
+                    <div class="post-description"><p>{{ post.content | safe }} </p></div>
                 </div>
+                <div class="blog-post-tools">
+                    <a><i class="fa-solid fa-heart"></i></a>
+                    <a><i class="fa-solid fa-share"></i></a>
+                </div>
+                <br>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col card mb-4  mt-3 left top">
-                <div class="card-body">
-                    <!-- The post content goes inside the card-text. -->
-                    <!-- Use the | safe filter inside the template tags -->
-                    <article class="card-text">
 
-                        {{ post.content | safe }}
 
-                    </article>
-                </div>
-            </div>
-        </div>
         <!--  displaying count of comments -->
         <div class="row">
             <div class="col-12">
