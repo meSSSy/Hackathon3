@@ -5,20 +5,18 @@
 
 <div class="main-content">
     
-    {% if featured_post %}
     <div class="featured-post">
         <div class="featured-image">
-            {% if featured_post.featured_image %}
-            <img src="{{ featured_post.featured_image.url }}" alt="{{ featured_post.title }}">
-            {% endif %}
+            <img src="/static/images/image3.webp" alt="Blog featured image">
         </div>
         <div class="featured-content">
-            <h1 class="featured-title">{{ featured_post.title }}</h1>
-            <p class="featured-desc">{{ featured_post.description }}</p>
-            <a href="{% url 'blog:post_detail' featured_post.slug %}" class="btn">See Post</a>
+            <h1 class="featured-title">The Art and Science of Software Development: Crafting Digital Solutions</h1>
+            <p class="featured-desc">Explore the multifaceted world of software development, 
+                from its core principles to emerging trends. Discover how this dynamic field 
+                combines creativity, problem-solving, and technical expertise to shape our digital future.</p>
+            <button type="button" class="btn">See Post</button>
         </div>
     </div>
-    {% endif %}
 
     <div class="container">
         <div class="row">
