@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from .forms import CommentForm
 
 
@@ -159,18 +159,81 @@ def index(request):
     return render(request, 'index.html')
 
 def backend_view(request):
+
+    try:
+        backend_category = Category.objects.get(name='Backend')
+        posts = Post.objects.filter(category=backend_category, status=1)
+    except Category.DoesNotExist:
+        posts = Post.objects.none()
+
+    context = {
+        'posts': posts,
+    }
+
     return render(request, 'blog/backend.html')
 
+
+
 def ai_view(request):
+
+    try:
+        backend_category = Category.objects.get(name='AI')
+        posts = Post.objects.filter(category=backend_category)
+    except Category.DoesNotExist:
+        posts = Post.objects.none()
+
+    context = {
+        'posts': posts,
+    }
+
     return render(request, 'blog/ai.html')
 
+
+
 def cybersecurity_view(request):
+
+    try:
+        backend_category = Category.objects.get(name='Cybersecurity')
+        posts = Post.objects.filter(category=backend_category)
+    except Category.DoesNotExist:
+        posts = Post.objects.none()
+
+    context = {
+        'posts': posts,
+    }
+
     return render(request, 'blog/cybersecurity.html')
 
+
+
 def design_view(request):
+
+    try:
+        backend_category = Category.objects.get(name='Design')
+        posts = Post.objects.filter(category=backend_category)
+    except Category.DoesNotExist:
+        posts = Post.objects.none()
+
+    context = {
+        'posts': posts,
+    }
+
     return render(request, 'blog/design.html')
 
+
+
 def frontend_view(request):
+
+    try:
+        backend_category = Category.objects.get(name='Frontend')
+        posts = Post.objects.filter(category=backend_category)
+    except Category.DoesNotExist:
+        posts = Post.objects.none()
+
+    context = {
+        'posts': posts,
+    }
+
     return render(request, 'blog/frontend.html')
 
 

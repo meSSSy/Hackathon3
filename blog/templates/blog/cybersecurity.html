@@ -3,4 +3,16 @@
 {% block content %}
     <h1>Cyber Security</h1>
     <p>blah blah blah</p>
+
+    {% if posts %}
+{% for post in posts %}
+<article>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content|truncatewords:30 }}</p>
+</article>
+{% endfor %}
+{% else %}
+<p>No Cybersecurity posts available.</p>
+{% endif %}
+
 {% endblock %}
