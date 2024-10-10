@@ -154,7 +154,6 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-
 def index(request):
     return render(request, 'index.html')
 
@@ -235,8 +234,3 @@ def frontend_view(request):
     }
 
     return render(request, 'blog/frontend.html', context)
-
-
-
-
-main
