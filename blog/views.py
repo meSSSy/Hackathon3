@@ -169,7 +169,7 @@ def backend_view(request):
         'posts': posts,
     }
 
-    return render(request, 'blog/backend.html')
+    return render(request, 'blog/backend.html', context)
 
 
 
@@ -185,7 +185,7 @@ def ai_view(request):
         'posts': posts,
     }
 
-    return render(request, 'blog/ai.html')
+    return render(request, 'blog/ai.html', context)
 
 
 
@@ -201,7 +201,7 @@ def cybersecurity_view(request):
         'posts': posts,
     }
 
-    return render(request, 'blog/cybersecurity.html')
+    return render(request, 'blog/cybersecurity.html', context)
 
 
 
@@ -217,7 +217,7 @@ def design_view(request):
         'posts': posts,
     }
 
-    return render(request, 'blog/design.html')
+    return render(request, 'blog/design.html', context)
 
 
 
@@ -233,4 +233,4 @@ def frontend_view(request):
         'posts': posts,
     }
 
-    return render(request, 'blog/frontend.html')
+    return render(request, 'blog/frontend.html', context)
