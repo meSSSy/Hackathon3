@@ -87,7 +87,6 @@ footer {
 footer a {
   text-decoration: none;
   color: #e2e8f0;
-  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.95rem;
 }
 
@@ -305,6 +304,39 @@ hr {
 }
 
 
+.titlediv {
+  color: white;
+}
+
+.maintitle {
+  font-family: "Space Mono", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 4rem;
+}
+
+.titlediv p {
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.symbols {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 4rem;
+  color: #00ffee;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  opacity: 0.6;
+}
+
+
+
+
+
+
 
 
 
@@ -326,5 +358,10 @@ hr {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+  }
+
+  .maintitle {
+    font-size: 1.5rem; 
+    margin-bottom: 7%; 
   }
 }

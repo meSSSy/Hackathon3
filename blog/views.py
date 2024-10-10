@@ -234,3 +234,7 @@ def frontend_view(request):
     }
 
     return render(request, 'blog/frontend.html', context)
+
+
+def featuredpost(request):
+    return render(request, 'blog/featuredpost.html')

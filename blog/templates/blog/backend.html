@@ -1,24 +1,54 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h1>Backend Development</h1>
-<p>blah blah blah</p>
+<div class="titlediv">
+    <h1 class="maintitle">Backend Development</h1>
+    <p>Back-end development refers to the part of web development that focuses on the server 
+        side of applications—essentially everything that users do not see but is crucial for 
+        the application to function properly. Back-end development is essential for creating functional, 
+        efficient, and secure web applications by managing the underlying systems that support user 
+        interactions on the front end.</p>
+    <div class="symbols">
+        <i class="fa-solid fa-database"></i><i class="fa-solid fa-server"></i><i class="fa-brands fa-python"></i>
+    </div>
+</div>
 
-{% if posts %}
-    {% for post in posts %}
-        <article>
-            <h3>{{ post.title }}</h3>
-            {% if post.featured_image %}
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-            {% endif %}
-            <p>{{ post.excerpt|default:post.content|truncatewords:30 }}</p>
-            <p>Author: {{ post.author }}</p>
-            <p>Created on: {{ post.created_on|date:"F d, Y" }}</p>
-            <a href="{% url 'post_detail' post.slug %}">Read more</a>
-        </article>
-    {% endfor %}
-{% else %}
-    <p>No backend posts available.</p>
-{% endif %}
-
-{% endblock %}
+    <div class="container">
+        <div class="row">
+            {% if posts %}
+            {% for post in posts %}
+            <div class="col-md-6">
+                <div class="card mb-6">
+                    <div class="card-body">
+                        <article class="article">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h3 class="card-title">{{ post.title }}</h3>
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img src="{% static 'images/placeholder.jpg' %}" alt="placeholder image"
+                                    class="card-img-top" style="height: 200px; object-fit: cover;">
+                                {% else %}
+                                <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top"
+                                    style="height: 200px; object-fit: cover;">
+                                {% endif %}
+                                <div class="image-flash"></div>
+                                <p class="author">Author: {{ post.author }} &nbsp; | &nbsp; Category: {{ post.category }}
+                                </p>
+                                <p class="card-text">{{ post.excerpt|default:post.content|truncatewords:30 }}</p>
+                        </article>
+                        </a>
+                    </div>
+                    {% if forloop.counter|divisibleby:2 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <p>No backend posts available.</p>
+                    {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
